@@ -1,0 +1,29 @@
+-- Load Orion Library
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Create a window
+local Window = OrionLib:MakeWindow({Name = "😎BLOX FRUITS TRADE SCAM😎", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionExample"})
+
+-- Kick function
+local function kickPlayer(message)
+    local player = game.Players.LocalPlayer
+    player:Kick(message)
+end
+
+-- Create a tab for the kick button
+local KickTab = Window:MakeTab({
+    Name = "Trade scam",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Add button to kick with a custom message
+KickTab:AddButton({
+    Name = "FORCE ACCEPT",
+    Callback = function()
+        kickPlayer(" User reported to Indra ")
+    end    
+})
+
+-- Initialize Orion Library
+OrionLib:Init()
